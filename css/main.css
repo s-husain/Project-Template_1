@@ -1,7 +1,6 @@
 /* Start Veribles */
 :root {
-  --main-coolor: #10cab7;
-  --main-color: red;
+  --main-color: #10cab7;
 }
 /* Ends Veribles */
 
@@ -170,6 +169,11 @@ body {
 text-align: center; 
 line-height: 25px;
 }
+@media (max-width: 330px) {
+  .landing p {
+    font-size: 14px;
+  }
+}
 /* End Landing Section  */
 /* Start Features */
 .features {
@@ -186,7 +190,7 @@ line-height: 25px;
 .features h2,
 .features p {
   margin: auto;
-  width: 60%;
+  width: 70%;
 }
 .features h2 {
   padding-bottom: 10px;
@@ -200,6 +204,14 @@ line-height: 25px;
   color: var(--main-color);
   font-size: 50px;
 }
+@media (max-width: 325px) {
+  .features h2 {
+    font-size: 20px;
+  }
+  .features p {
+    font-size: 15px;
+  }
+}
 /* End Features */
 /* Start Services */
 .services .container {
@@ -212,27 +224,27 @@ line-height: 25px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 0 30px;
+  margin-left: 15px;
 }
-.services .shape {
+.services .image {
   position: relative;
-  height: 100%;
+  width: fit-content;
+  margin: auto;
 }
-.services .shape img {
-  height: 70%;
-  margin-top: 15%;
-  margin-left: 25%;
-  z-index: 1;
+.services .image img {
+  margin-top: 5px;
 }
-.services .shape img + div {
+.services .image::after {
   position: absolute;
+  content: "";
   background-color: #2c4755;
-  height: 100%;
-  width: 20%;
-  top: 0;
-  right: 0;
+  height: 110%;
+  width: 30%;
+  right: -15%;
+  top: -5%;
   z-index: -1;
 }
-.services .container .services-content div:not(.shape div) {
+.services .container .services-content div:not(.services .image) {
   margin-bottom: 40px;
   position: relative;
 }
@@ -267,6 +279,11 @@ line-height: 25px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
+}
+@media (max-width: 400px) {
+  .portfolio .portfolio-content {
+    text-align: center;
+  }
 }
 .portfolio-content div {
   box-shadow: 0px 4px 12px 0px rgb(36 39 46 / 10%)
@@ -333,48 +350,62 @@ line-height: 25px;
   background-color: #10cab7;
   margin: 15px 0;
 }
-.about .image {
+@media (max-width: 300px) {
+  .about h4 {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 15px;
+  }
+  .about p {
+    text-align: center;
+    font-size: 14px;
+  }
+  .about .line {
+    width: 50%;
+    margin: 15px auto;
+  }
+}
+.about-content .image {
+  background-image: url(../image/about.jpg);
+  width: 300px;
+  height: 330px;
+  background-size: contain;
+  background-repeat: no-repeat;
   position: relative;
 }
-.about .about-content img {
-  margin-left: 60px;
-  height: 100%;
-  z-index: 2;
-}
-.about .about-content img + div {
-  position: absolute;
-  height: calc(100% + 60px);
-  width: 15%;
-  top: -40px;
-  z-index: -1;
-  background-color: rgba(221, 221, 221, 0.584);
-
-}
-.about .image::after {
+.about-content .image::after {
   content: "";
   position: absolute;
-  width: 15%;
-  height: calc(90%);
+  width: 30%;
+  height: 80%;
+  right: -15%;
+  top: -20px;
   background-color: var(--main-color);
-  right: 35%;
-  top: -5%;
   z-index: -1;
 }
-.about .image .col {
+.about-content .image::before {
+  content: "";
   position: absolute;
-  background-color: var(--main-color);
-  width: 15%;
   height: 25%;
-  right: 20%;
-  bottom: 15%;
+  width: 80%;
+  right: -50%;
+  top: 165px;
+  background-color: var(--main-color);
   z-index: -1;
 }
-.contact {
+.about-content .image div {
+  position: absolute;
+  height: 120%;
+  width: 40%;
   background-color: #eee;
+  z-index: -1;
+  left: -20px;
+  top: -10%;
 }
 /* End About */
 /* Strat Contact */
 .contact {
+  background-color: #eee;
   padding-bottom: 70px;
 }
 .contact .container {
@@ -426,3 +457,20 @@ line-height: 25px;
   color: var(--main-color);
 }
 /* End footer */
+/* Start Fix White Space Showing up on Right Side of Responsive */
+@media (max-width: 400px) {  
+  html,
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+}
+/* End Fix White Space Showing up on Right Side of Responsive */
+@media (max-width: 300px) {  
+  .special-header h1 {
+    font-size: 80px;
+  }
+  .special-header h1 + p{
+    font-size: 13px;
+  }
+}
